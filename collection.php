@@ -1,12 +1,15 @@
 <?php
 
-class Collection implements Iterator, ArrayAccess
+class BaselibCollection implements Iterator, ArrayAccess
 {
-        
     //The number of elements from the Collection
     public $length=0;
+    protected $array_elements = array();
 
-    //Adding an object into a collection
+
+    /** Adding an object into a collection
+     * @param object arg1 The value to add. it can be any type og object, string, int etc.
+    */
     public function add($arg1, $arg2=false)
     {
         if (!$arg2) {
@@ -17,7 +20,7 @@ class Collection implements Iterator, ArrayAccess
             }
         }
         $this->count();
-        return $this ;
+        return $this;
     }
 
     //Setting a value for a specified key of the array_elements
@@ -57,7 +60,7 @@ class Collection implements Iterator, ArrayAccess
     public function count()
     {
         $this->lenght = count($this->array_elements);
-        return $this->lenght ;
+        return $this->lenght;
     }
     
     //Removing a specified kye
@@ -211,5 +214,3 @@ class Collection implements Iterator, ArrayAccess
         return $this;
     }
 }
-
-?>

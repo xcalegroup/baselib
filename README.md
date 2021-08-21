@@ -12,8 +12,8 @@ require_once(__DIR__ . "/baselibconstants.php");
 define("__BASELIB__NAME", "Application name");
 define("__BASELIB__DEBUG", true);
 define("__BASELIB__LOGGING", true);
-define("__BASELIB__STACKTRACE", true);
-define("__BASELIB__REMOTE__LOGGING", true);
+define("__BASELIB__TRACE", true);
+define("__BASELIB__REMOTE__DATA", true);
 define("__BASELIB__REMOTE__ENDPOINT", "Enpoint URL for your remote logging, if enabled");
 define("__BASELIB__REMOTE__KEY", "Key for remote logging, if you choose to implement it");
 ```
@@ -27,6 +27,7 @@ define("__BASELIB__DB_HOST", "localhost");
 define("__BASELIB__DB_USER", "USER");
 define("__BASELIB__DB_PASS", "PASS");
 define("__BASELIB__DB_NAME", "NAME");
+define("__BASELIB__CREATE_DB", false); // if tru it will autocreate the log table, but only if the table does not exists, so it can be always true
 ```
 
 If you allready have your database defined then use those defined constants in your baselibconstants file like this
@@ -38,4 +39,41 @@ define("__BASELIB__DB_HOST", DB_HOST);
 define("__BASELIB__DB_USER", DB_USER);
 define("__BASELIB__DB_PASS", DB_PASS);
 define("__BASELIB__DB_NAME", DB_NAME);
+define("__BASELIB__CREATE_DB", false);
 ```
+
+# Usage
+```
+class YouClass extends BaselibClass
+{
+    public function Method1()
+    {
+        $this->trace->add(__FUNCTION__);
+        ...
+    }
+
+    public function Method2()
+    {
+        $this->trace->add(__FUNCTION__);
+        try{
+            ...
+        }
+        catch(Exception $e){
+            $this->log(Severity::ERROR,$e);
+        }
+        finally{
+
+        }
+    }
+}
+```
+
+The baselibClass provides numerous ways of logging
+**collections**
+Collections are stored upon object destruction. Either by using unset or by letting PHP handle carbage collection.
+- trace
+- logs
+**methods**
+Methods log instantly on each call
+- log
+- message
