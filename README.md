@@ -81,3 +81,19 @@ Collections are stored upon object destruction. Either by using unset or by lett
 Methods log instantly on each call
 - log
 - message
+
+**Remote Endpoint**
+
+The remote endpoint will be called using POST. Handle variables like the below, where key is used as a security measure. Use it as part of an API validation process. Using remote logging might be usefull for small projects or if you have multiple CRON jobs and wish to have logging easy at hand.
+
+```
+$_POST['key']!='') {
+    $key=$_POST['key'];
+    $app=$_POST['app'];
+    $severity=$_POST['severity'];
+    $errorcode=$_POST['errorcode'];
+    $error=$_POST['error'];
+    $stack_trace=$_POST['stack_trace'];
+    $user=$_POST['user'];
+}
+```
