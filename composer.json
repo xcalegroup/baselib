@@ -1,4 +1,5 @@
 {
     "name": "xcalegroup/baselib",
-    "description": "Baselib for the mundane issues"
+    "description": "Baselib for the mundane issues",
+    "license": "MIT"
 }
