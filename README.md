@@ -27,7 +27,7 @@ define("__BASELIB__DB_HOST", "localhost");
 define("__BASELIB__DB_USER", "USER");
 define("__BASELIB__DB_PASS", "PASS");
 define("__BASELIB__DB_NAME", "NAME");
-define("__BASELIB__CREATE_DB", false); // if tru it will autocreate the log table, but only if the table does not exists, so it can be always true
+define("__BASELIB__CREATE_DB", false); // if true it will autocreate the log table, but only if the table does not exists, so it can be always true
 ```
 
 If you allready have your database defined then use those defined constants in your baselibconstants file like this
