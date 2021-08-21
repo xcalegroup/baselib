@@ -1,6 +1,10 @@
 # Baselib
 A library for handling the most mundane things like exception handling and logging aswell as the most often needed functions
 
+```
+composer require xcalegroup/baselib
+```
+
 # Requirements
 You need to define the following contants in a file named baselibconstants.php placed in the root folder of your project. The Baselib will include the file like this
 ```
