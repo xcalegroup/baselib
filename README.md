@@ -1,7 +1,7 @@
 # Baselib
 A library for handling the most mundane things like exception handling and logging aswell as the most often needed functions
 
-# requirements
+# Requirements
 You need to define the following contants in your project
 
 **Baselib requirements for logging**
@@ -15,7 +15,7 @@ define("__APPLICATTION__REMOTE__ENDPOINT", "Enpoint URL for your remote logging,
 define("__APPLICATTION__REMOTE__KEY", "Key for remote logging, if you choose to implement it");
 ```
 
-**baselib requirements for handling database**
+**Baselib requirements for handling database**
 
 This could be defined in another constants.php file, but is rquired to auto create tables if missing as well as adding data to the database
 ```
