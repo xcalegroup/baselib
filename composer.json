@@ -12,8 +12,5 @@
             "homepage": "https://xcale.net",
             "role": "Developer"
         }
-    ],
-    "require": {
-        "php": ">=7.0"
-    }
+    ]
 }
