@@ -1,5 +1,19 @@
 {
     "name": "xcalegroup/baselib",
+    "type": "library",
     "description": "Baselib for the mundane issues",
-    "license": "MIT"
+    "keywords": ["baseclass","logging","remote logging","exception handling"],
+    "homepage": "https://xcale.net",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lennart Øster",
+            "email": "info@xcale.net",
+            "homepage": "https://xcale.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    }
 }
