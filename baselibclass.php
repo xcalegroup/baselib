@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 require_once(__DIR__ . "/baselibconstants.php");
 require_once("collection.php");
