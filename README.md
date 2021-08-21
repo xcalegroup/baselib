@@ -69,11 +69,15 @@ class YouClass extends BaselibClass
 ```
 
 The baselibClass provides numerous ways of logging
+
 **collections**
+
 Collections are stored upon object destruction. Either by using unset or by letting PHP handle carbage collection.
 - trace
 - logs
+
 **methods**
+
 Methods log instantly on each call
 - log
 - message
