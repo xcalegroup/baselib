@@ -1,6 +1,5 @@
 {
     "name": "xcalegroup/baselib",
-    "type": "library",
     "description": "Baselib for the mundane issues",
     "keywords": ["baseclass","logging","remote logging","exception handling"],
     "homepage": "https://xcale.net",
@@ -12,5 +11,8 @@
             "homepage": "https://xcale.net",
             "role": "Developer"
         }
-    ]
+    ],
+    "require": {
+        "php": ">=7.0"
+    }
 }
