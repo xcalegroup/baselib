@@ -1,6 +1,10 @@
 # Baselib
 A library for handling the most mundane things like exception handling and logging aswell as the most often needed functions
 
+```
+composer require xcalegroup/baselib
+```
+
 # Requirements
 You need to define the following contants in a file named baselibconstants.php placed in the root folder of your project. The Baselib will include the file like this
 ```
@@ -27,7 +31,7 @@ define("__BASELIB__DB_HOST", "localhost");
 define("__BASELIB__DB_USER", "USER");
 define("__BASELIB__DB_PASS", "PASS");
 define("__BASELIB__DB_NAME", "NAME");
-define("__BASELIB__CREATE_DB", false); // if tru it will autocreate the log table, but only if the table does not exists, so it can be always true
+define("__BASELIB__CREATE_DB", false); // if true it will autocreate the log table, but only if the table does not exists, so it can be always true
 ```
 
 If you allready have your database defined then use those defined constants in your baselibconstants file like this
@@ -69,11 +73,31 @@ class YouClass extends BaselibClass
 ```
 
 The baselibClass provides numerous ways of logging
+
 **collections**
+
 Collections are stored upon object destruction. Either by using unset or by letting PHP handle carbage collection.
 - trace
 - logs
+
 **methods**
+
 Methods log instantly on each call
 - log
 - message
+
+**Remote Endpoint**
+
+The remote endpoint will be called using POST. Handle variables like the below, where key is used as a security measure. Use it as part of an API validation process. Using remote logging might be usefull for small projects or if you have multiple CRON jobs and wish to have logging easy at hand.
+
+```
+$_POST['key']!='') {
+    $key=$_POST['key'];
+    $app=$_POST['app'];
+    $severity=$_POST['severity'];
+    $errorcode=$_POST['errorcode'];
+    $error=$_POST['error'];
+    $stack_trace=$_POST['stack_trace'];
+    $user=$_POST['user'];
+}
+```
