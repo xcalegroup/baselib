@@ -101,3 +101,16 @@ $_POST['key']!='') {
     $user=$_POST['user'];
 }
 ```
+
+**FileReader class - For reading Huge file**
+
+This class has been tested on files containing more than 2.5 million lines and sizes above 72GB data.
+Its does not put pressure on your server and can run multiple instances on different files
+
+```
+$filereader = new FileReader('file.extension', true);
+$filereader->read('handleLineContent');
+
+function handleLineContent($content){
+    //Handle the content read. This is called each time a line is read
+}
