@@ -1,7 +1,7 @@
 <?php
 namespace XcaleGroup;
 
-class BaselibCollection implements Iterator, ArrayAccess
+class BaselibCollection implements \Iterator, \ArrayAccess
 {
     //The number of elements from the Collection
     public $length=0;

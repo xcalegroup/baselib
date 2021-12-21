@@ -22,7 +22,7 @@ class FileReader
         $this->resume = $resume;
         $this->linenumber = $linenumber;
 
-        $this->fileobj = new SplFileObject($this->file);
+        $this->fileobj = new \SplFileObject($this->file);
 
         if($this->resume){
             $this->linenumber = $this->getCurrentlinenumber();
