@@ -20,6 +20,7 @@ class BaselibClass
 {
     protected BaselibCollection $trace;
     protected BaselibCollection $logs;
+    protected $debug="";
 
     //Properties
     public $user_id = 0;
@@ -31,8 +32,21 @@ class BaselibClass
         $this->init_database();
     }
 
-    public function __destruct()
+    /**
+     * To get debug data you need to call like this
+     * public function __destruct()
+     * {
+     *    $this->store((array)$this, get_class($this));
+     * }
+     *
+     */
+    public function store($vars, $class)
     {
+        $debug = array();
+        $debug[] = $class;
+        $debug[] = $vars;
+        $this->debug = json_encode($debug);
+
         if (__BASELIB__DEBUG) {
             $this->save_debug();
         }
@@ -99,9 +113,9 @@ class BaselibClass
     {
         if (__BASELIB__DEBUG) {
             if (__BASELIB__REMOTE__DATA) {
-                $this->remote_addlog(Severity::DEBUG, 0, "", serialize($this), $this->user_id);
+                $this->remote_addlog(Severity::DEBUG, 0, "", $this->debug, $this->user_id);
             } else {
-                $this->addlog(Severity::DEBUG, 0, "", serialize($this), $this->user_id);
+                $this->addlog(Severity::DEBUG, 0, "", $this->debug, $this->user_id);
             }
         }
     }
