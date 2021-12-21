@@ -1,4 +1,5 @@
 <?php 
+namespace xcalegroup;
 
 class FileReader
 {
@@ -14,7 +15,7 @@ class FileReader
      * @param file the path and filename of which you want to read data
      * @param bool Resume. if true it will read from the resume file and start there. Dewfaults to false
      * @param int Linenumber to start reading from. Defaults to 1
-     */
+     */    
     function __construct($file, $resume = false, $linenumber = 1){
         $this->destroy = false;
         $this->file = $file;

@@ -1,4 +1,5 @@
 <?php
+namespace xcalegroup;
 
 class BaselibCollection implements Iterator, ArrayAccess
 {

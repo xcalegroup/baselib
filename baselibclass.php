@@ -1,5 +1,7 @@
 <?php 
 
+namespace xcalegroup;
+
 require_once(__DIR__ . "/baselibconstants.php");
 require_once("collection.php");
 require_once("database.php");
@@ -84,6 +86,7 @@ class BaselibClass
         }
     }
 
+    
     public function message(string $title, string $message)
     {
         if (__BASELIB__REMOTE__DATA) {
