@@ -2,7 +2,6 @@
 
 namespace XcaleGroup;
 
-require_once(__DIR__ . "/baselibconstants.php");
 require_once("collection.php");
 require_once("database.php");
 
