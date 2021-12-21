@@ -1,6 +1,6 @@
 <?php 
 
-namespace XcaleGroup\Baselib;
+namespace XcaleGroup;
 
 require_once(__DIR__ . "/baselibconstants.php");
 require_once("collection.php");

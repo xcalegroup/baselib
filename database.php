@@ -1,5 +1,5 @@
 <?php
-namespace XcaleGroup\Baselib;
+namespace XcaleGroup;
 /**
  * Databaseclass written specifically for the baselib, hense the name.
  * This is only used to handle internal requests and should not be used in your project if you allready have a similar class

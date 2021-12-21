@@ -1,5 +1,5 @@
 <?php 
-namespace XcaleGroup\Baselib;
+namespace XcaleGroup;
 
 class FileReader
 {
